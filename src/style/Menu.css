@@ -1,0 +1,105 @@
+/* Floating Popup Menu */
+.menu-popup {
+    position: fixed;
+    bottom: 20px;
+    /* Adjust as needed for spacing from the bottom */
+    left: 100px;
+    /* Adjust as needed for spacing from the left */
+    width: 80px;
+    /* Adjust width as needed */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it appears above other content */
+    transform: translateY(0%);
+    /* Start hidden below view */
+    transition: transform 0.3s ease;
+    /* Smooth slide-in effect */
+}
+
+/* Show the menu when active */
+.menu-popup.active {
+    transform: translateY(0);
+    /* Slide in to view */
+}
+
+/* Title styling */
+.menu-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Items list styling */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button styling */
+.menu-item-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    /* Adjust icon size */
+    color: white;
+    background-color: #ff5100;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item-button:hover {
+    background-color: #c73f00;
+}
+
+/* Icon styling */
+.menu-item-icon {
+    font-size: 24px;
+    /* Adjust icon size */
+}
+
+/* Coming Soon styling */
+.coming-soon {
+    position: relative;
+}
+
+.coming-soon .menu-item-button {
+    background-color: #ddd;
+    /* Gray background for coming soon items */
+    color: #666;
+    /* Gray icon color */
+}
+
+.coming-soon .menu-item-icon {
+    font-size: 20px;
+    /* Slightly smaller icon size for coming soon items */
+}
+
+.coming-soon .coming-soon-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+    margin-top: 5px;
+}

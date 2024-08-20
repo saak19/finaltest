@@ -1,0 +1,45 @@
+/* Settings container styling */
+.settings-container {
+    position: fixed;
+    bottom: 20px; /* Align to the bottom of the screen */
+    left: 20px; /* Align to the left of the screen */
+    width: 300px; /* Set the desired width */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure it appears above other content */
+}
+
+/* Settings header styling */
+.settings-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Settings options list styling */
+.settings-options {
+    list-style: none;
+    padding: 0;
+}
+
+/* Settings button styling */
+.settings-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(43, 43, 43);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Hover effect for settings button */
+.settings-button:hover {
+    background-color: #e7e7e7;
+}

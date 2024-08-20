@@ -1,0 +1,178 @@
+/* Container for the sidebar */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px; /* Adjust width for narrow sidebar */
+    background-color: #ffffff; /* Light background for the sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid rgb(243, 243, 243); /* Border for the sidebar */
+    padding-top: 100px; /* Adjust top padding */
+    z-index: 1; /* Ensure it's above other content */
+}
+
+/* Profile section */
+.profile-section {
+    margin-bottom: 20px; /* Space between profile and icons */
+}
+
+/* Profile image */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular profile image */
+    border: 2px solid #dddddd; /* Border color for profile image */
+    object-fit: cover;
+}
+
+/* Navigation icons container */
+.navigation-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navigation icon styling */
+.nav-icon {
+    color: #444444; /* Default icon color */
+    font-size: 28px; /* Icon size */
+    background-color: #f3f3f3; /* Background color for icons */
+    padding: 10px 15px; /* Padding around icons */
+    border-radius: 50%; /* Circular background for icons */
+    margin: 10px 0; /* Vertical spacing between icons */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color and background transition */
+    position: relative; /* Required for positioning the tooltip */
+    cursor: pointer; /* Pointer cursor for clickable icons */
+}
+
+/* Icon hover effect */
+.nav-icon:hover {
+    color: #ffffff; /* Highlight color on hover */
+    background-color: #000000; /* Background color on hover */
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    right: -50%; /* Position left of the icon */
+    top: 0%; /* Center vertically relative to the icon */
+    transform: translateY(-50%); /* Center the tooltip vertically */
+    background-color: #333; /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 12px; /* Padding around text */
+    border-radius: 6px; /* Slightly more rounded corners */
+    font-size: 14px; /* Adjusted font size for readability */
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and movement effect */
+    z-index: 100; /* Ensure tooltip is above other elements */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Show the tooltip on hover */
+.nav-icon:hover .tooltip {
+    opacity: 1; /* Show the tooltip */
+    visibility: visible; /* Make tooltip visible */
+    transform: translateY(-50%) translateX(-10px); /* Slight leftward movement for better effect */
+}
+
+/* Active icon styling */
+.nav-icon.active {
+    color: #f3f3f3; /* Color when active */
+    background-color: #272727; /* Background color when active */
+}
+
+/* Slider container styling */
+.slider-container {
+    position: relative;
+    width: 80px; /* Same width as sidebar */
+    height: calc(100% - 70px); /* Adjust height to avoid overlap with bottom section */
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Slider image styling */
+.slider-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Arrow icons styling */
+.arrow-icon {
+    color: #fff; /* White arrows */
+    font-size: 24px; /* Arrow size */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure arrows are on top of slider image */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.arrow-icon:hover {
+    color: #f39c12; /* Highlight color on hover */
+}
+
+.arrow-icon:first-of-type {
+    left: 10px; /* Position left arrow */
+}
+
+.arrow-icon:last-of-type {
+    right: 10px; /* Position right arrow */
+}
+
+/* Settings section */
+.settings-section {
+    margin-top: auto; /* Push the settings section to the bottom */
+    padding-bottom: 120px; /* Padding around settings icon */
+}
+
+/* Settings icon styling */
+.settings-section .nav-icon {
+    font-size: 24px; /* Smaller size for settings icon */
+}
+
+/* Notification popup styling */
+.notification-popup {
+    position: fixed;
+    top: 20%;
+    left: 80px; /* Adjust this to align with the sidebar */
+    width: 300px; /* Adjust the width as needed */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure it appears above other content */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Close button styling */
+.close-btn {
+    background: none;
+    border: none;
+    color: #444;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Notification content styling */
+.notification-content {
+    margin-top: 20px;
+    /* Add more styles as needed */
+}

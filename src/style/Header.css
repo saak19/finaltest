@@ -1,0 +1,142 @@
+/* Centering the header within a max-width */
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 2px;
+    background: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    /* Blurred background effect */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure header stays above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for depth */
+    justify-content: space-between;
+    /* Distribute space between logo and search */
+}
+
+/* Logo styling */
+.header__logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    /* Add margin to keep distance from left edge */
+}
+
+.header__logo-img {
+    height: 44px;
+    /* Adjust the size as needed */
+    width: auto;
+}
+
+/* Search input styling */
+.header__search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    /* Allow search to expand */
+    max-width: 399px;
+    /* Increased max-width for better center alignment */
+    margin: 0 auto;
+    /* Center the search input horizontally */
+}
+
+.header__search input {
+    width: 100%;
+    padding: 10px 40px;
+    /* Padding for the text and space for icons */
+    font-size: 18px;
+    /* Font size for the input text */
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    /* Rounded corners for the input */
+    padding-left: 50px;
+    /* Extra padding on the left for the search icon */
+}
+
+.header__search .search-icon {
+    position: absolute;
+    right: 15px;
+    /* Position the search icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    /* Font size for the search icon */
+    color: #333;
+    /* Icon color */
+}
+
+/* Input focus styling */
+.header__search input:focus {
+    outline: none;
+    border-color: #949494;
+    /* Border color on focus */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header__search {
+        max-width: 300px;
+        /* Reduce max-width for search input on smaller screens */
+    }
+
+    .header__search input {
+        padding: 8px 30px;
+        /* Smaller padding for input */
+        font-size: 14px;
+        /* Smaller font size for input text */
+        padding-left: 40px;
+        /* Adjust padding for search icon */
+    }
+
+    .header__search .search-icon {
+        font-size: 18px;
+        /* Smaller search icon */
+        right: 10px;
+        /* Adjust position */
+    }
+}
+
+@media (max-width: 390px) {
+    .header__logo {
+        margin-left: 10px;
+        /* Adjust margin for very small screens */
+    }
+
+    .header__search {
+        max-width: 250px;
+        /* Decrease max-width for search input on very small screens */
+    }
+
+    .header__search input {
+        padding: 8px 30px;
+        /* Smaller padding for input */
+        font-size: 14px;
+        /* Smaller font size for input text */
+        padding-left: 40px;
+        /* Adjust padding for search icon */
+    }
+
+    .header__search .search-icon {
+        font-size: 18px;
+        /* Smaller search icon */
+        right: 10px;
+        /* Adjust position */
+    }
+}

@@ -1,0 +1,183 @@
+/* Container for the entire screen, considering header and sidebar */
+.videos-wrapper {
+  position: fixed;
+  top: 50px; /* Align with the top of the viewport */
+  left: 80px; /* Adjust to account for the sidebar width */
+  height: 96vh; /* Full viewport height */
+  width: calc(100% - 80px); /* Full width minus the sidebar width */
+  background: rgb(245, 245, 245);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);  overflow-y: auto; /* Allows scrolling if content overflows vertically */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
+  z-index: 1; /* Ensures it's above other elements */
+  padding: 16px; /* Add padding around the content */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Container for actions like search, back, and upload */
+.actions-container {
+  position: sticky;
+  top: 20px; /* Adjust this value to add space from the top */
+  z-index: 10; /* Ensures it stays above other content */
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 12px;
+  background-color: #ffffff; /* Light background color */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+
+/* Styling for action icons */
+.action-icon {
+  font-size: 1.5rem;
+  margin: 0 0.75rem; /* Spacing between icons */
+  padding: 0.5rem;
+  background-color: #e9ecef; /* Light background color for icons */
+  border-radius: 50%; /* Circular background */
+  color: #606060; /* Default icon color */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.action-icon:hover {
+  background-color: #ff6600; /* Background color on hover */
+  color: #fff; /* White icon color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Container for the search bar */
+.video-search-bar-container {
+  position: relative;
+  flex-grow: 1;
+  margin: 0 6rem; /* Margin to separate from icons */
+}
+
+/* Search input field */
+.video-search-input-field {
+  border: none;
+  background-color: #dbdbdb;
+  padding: 18px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.search-input-field:focus {
+  border-color: #bebfc0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Search icon within the search bar */
+.search-icon-element {
+  position: absolute;
+  top: 50%;
+  right: 1rem; /* Adjust position to fit padding */
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #999;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.search-icon-element:hover {
+  color: #000000; /* Change color on hover */
+}
+
+/* Ensure the last action icon (Upload) aligns to the right */
+.action-icon:last-child {
+  margin-left: auto; /* Pushes the last icon to the end */
+}
+
+
+.videos-header {
+  font-size: 2.4em;
+  letter-spacing: -1px;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-align: left; /* Center the header text */
+}
+
+.videos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* Center videos horizontally */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.video-card {
+  flex: 1 1 calc(25% - 16px); /* Four cards per row with space for gaps */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  height: 100%; /* Ensure the card takes up the full height of its container */
+  display: flex;
+  flex-direction: column;
+}
+
+.video-thumbnail-image {
+  width: 100%; /* Ensure thumbnail fills the container's width */
+  height: auto; /* Auto height to maintain aspect ratio */
+  flex-grow: 1;
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+.video-info {
+  padding: 12px;
+  background-color: none;
+  flex-shrink: 0; /* Prevents the info section from shrinking */
+}
+
+.video-title-text {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-duration-text {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.video-channel-name {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.video-upload-date {
+  font-size: 0.8em;
+  color: #999;
+}
+
+
+/* Media query for screens 1230px wide or less */
+@media (max-width: 1430px) {
+  .video-card {
+    flex: 1 1 calc(33.333% - 16px); /* Three cards per row with space for gaps */
+  }
+}
+
+/* Media query for screens 768px wide or less (for mobile responsiveness) */
+@media (max-width: 968px) {
+  .video-card {
+    flex: 1 1 calc(50% - 16px); /* Two cards per row with space for gaps */
+  }
+}
+
+/* Media query for screens 480px wide or less (for very small screens) */
+@media (max-width: 580px) {
+  .video-card {
+    flex: 1 1 calc(100% - 16px); /* One card per row with space for gaps */
+  }
+}

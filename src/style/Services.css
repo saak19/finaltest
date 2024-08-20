@@ -1,0 +1,180 @@
+/* Block background scrolling when the popup is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Services Popup Container */
+.services-popup-container {
+  position: fixed;
+  top: 50px; /* Align with the top of the viewport */
+  left: 80px; /* Adjust to account for the sidebar width */
+  height: 96vh; /* Full viewport height */
+  width: calc(40% - 80px); /* Full width minus the sidebar width */
+  background: rgb(245, 245, 245);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);  overflow-y: auto; /* Allows scrolling if content overflows vertically */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
+  z-index: 1; /* Ensures it's above other elements */
+  padding: 16px; /* Add padding around the content */
+  box-sizing: border-box; /* Align items at the top with space around */
+}
+
+/* Services Header Container */
+.services-header-container {
+  position: sticky;
+  top: 20px; /* Adjust this value to add space from the top */
+  z-index: 99; /* Ensures it stays above other content */
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 12px;
+  background-color: #ffffff; /* Light background color */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px;
+}
+
+/* Header Icon Styling */
+.services-back-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.services-search-bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  position: relative;
+}
+
+.services-search-icon {
+  font-size: 20px;
+  color: #999;
+  position: absolute;
+  left: 10px;
+}
+
+.services-search-input {
+  width: 100%;
+  padding: 8px 40px 8px 30px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.services-create-icon {
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.services-menu-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.services-menu-icon {
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Services Content Container */
+.services-content-container {
+  width: 100%;
+  max-width: 800px; /* Maximum width of the content container */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+}
+
+/* Services Grid Container */
+.services-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Service Card Container */
+.service-card-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+/* Service Image Carousel */
+.service-image-carousel {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  border-radius: 8px;
+}
+
+.service-arrow-icon-left,
+.service-arrow-icon-right {
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.service-arrow-icon-left {
+  left: 10px;
+}
+
+.service-arrow-icon-right {
+  right: 10px;
+}
+
+.service-image-display {
+  width: 100%;
+  height: auto;
+}
+
+/* Service Card Menu */
+.service-card-menu-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.service-card-menu-icon {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Service Title, Description, and Price */
+.service-title-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.service-description-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.service-price-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
